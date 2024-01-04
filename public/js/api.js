@@ -74,8 +74,6 @@ function getGs(){
     
         data.forEach((d) => {
             var newRow = tr.cloneNode(true)
-       
-    
             newRow.cells[0].textContent = d.name
             newRow.cells[1].textContent = formatDate(d.created_at)
             newRow.cells[2].textContent = d.domain

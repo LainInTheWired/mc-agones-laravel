@@ -96,7 +96,7 @@
     </div>
 
 
-    <script src="{{asset('js/api.js')}}"></script>
+    <script src="{{asset('js/apistream.js')}}"></script>
 
 </x-app-layout>
 

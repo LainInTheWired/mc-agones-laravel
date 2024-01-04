@@ -15,7 +15,9 @@ use App\Http\Controllers\API\k8sAPIController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
+Route::get('/test',function() {
+    return view('test');
+});
 Route::get('/', function () {
     return view('index');
 });
