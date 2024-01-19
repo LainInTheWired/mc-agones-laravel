@@ -16,8 +16,10 @@ use App\Http\Controllers\API\k8sAPIController;
 |
 */
 Route::get('/status',[k8sAPIController::class,'getK8sStatus']);
-Route::get('/statusstream',[k8sAPIController::class,'getK8sStatusStream']);
+Route::get('/test',[k8sAPIController::class,'getTestlogstream']);
 
+Route::get('/statusstream',[k8sAPIController::class,'getK8sStatusStream']);
+Route::get('/logstream',[k8sAPIController::class,'getK8sPodlogStream']);
 Route::post('/delete',[k8sAPIController::class,'deleteGsPvc']);
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();

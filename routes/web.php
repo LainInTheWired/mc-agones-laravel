@@ -21,6 +21,12 @@ Route::get('/test',function() {
 Route::get('/', function () {
     return view('index');
 });
+Route::get('phpinfo',function(){
+    return phpinfo();
+});
+Route::get('aws',function(){
+    return view('aws');
+});
 Route::get('/dashboard',[DashboardController::class,'index'])->middleware(['auth', 'verified'])->name('dashboard');
 Route::get('/create',[DashboardController::class,'create'])->middleware(['auth', 'verified'])->name('create');
 Route::post('/create_server',[DashboardController::class, 'createServer'])->middleware(['auth', 'verified'])->name('createServer');

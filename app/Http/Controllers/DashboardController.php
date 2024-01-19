@@ -25,7 +25,7 @@ class DashboardController extends Controller
 
         $mc_server  = new McServer;
 
-        $response = Http::get("http://192.168.11.6:8880/create?userid=" . $userid . "&sname=" . $server_name);
+        $response = Http::get("http://10.200.0.191:8880/create?userid=" . $userid . "&sname=" . $server_name);
         $data = $response->json();
         $mc_server->name = $server_name;
         $mc_server->pod_name = $data['createdGS']["metadata"]["name"];

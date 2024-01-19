@@ -46,16 +46,7 @@
         </div>
     </div>
     <div id='modal' class="relative z-10 hidden" aria-labelledby="modal-title" role="dialog" aria-modal="true">
-      <!--
-        Background backdrop, show/hide based on modal state.
-    
-        Entering: "ease-out duration-300"
-          From: "opacity-0"
-          To: "opacity-100"
-        Leaving: "ease-in duration-200"
-          From: "opacity-100"
-          To: "opacity-0"
-      -->
+
       <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"></div>
     
       <div class="fixed inset-0 z-10 w-screen overflow-y-auto">
@@ -94,10 +85,36 @@
         </div>
       </div>
     </div>
+    <x-slot name="footer">
+      <footer class=" h-60 bg-gray-700  mt-auto">
+          <div class="w-full   bg-gray-50 dark:bg-gray-700 dark:border-gray-600">
+              <div class="flex items-center justify-between px-3 py-2 border-b dark:border-gray-600">
+                  <div class="flex flex-wrap items-center divide-gray-200 sm:divide-x sm:rtl:divide-x-reverse dark:divide-gray-600">
+                      <div id="logbar" class="flex items-center space-x-1 rtl:space-x-reverse sm:pe-4">
+                         Log
+                      </div>
+                      <div class="flex flex-wrap items-center space-x-1 rtl:space-x-reverse sm:ps-4">
+                        
+                      </div>
+                  </div>
+        
+                  <div id="tooltip-fullscreen" role="tooltip" class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
+                      Show full screen
+                      <div class="tooltip-arrow" data-popper-arrow></div>
+                  </div>
+              </div>
+              <div class="px-4 py-2 bg-white rounded-b-lg dark:bg-gray-800">
+                  <label for="logtext" class="sr-only">Publish post</label>
+                  <textarea id="logtext" readonly rows="8" class="resize-none	 block w-full px-0 text-sm text-gray-800 bg-white border-0 dark:bg-gray-800 focus:ring-0 dark:text-white dark:placeholder-gray-400"></textarea>
+              </div>
+          </div>
+
+             </footer>
+             {{-- <script src="{{asset('js/logstream.js')}}"></script> --}}
+              <script src="{{asset('js/apistream.js')}}"></script>
 
 
-    <script src="{{asset('js/apistream.js')}}"></script>
-
+    </x-slot>
 </x-app-layout>
 
 
